@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Downloader</title>
+</head>
 <body>
-  <h1>Private YouTube Downloader</h1>
-  <input id="url" placeholder="Paste YouTube URL">
+  <h2>YouTube Downloader (Private)</h2>
+  <input id="link" placeholder="Paste URL YouTube">
   <button onclick="download()">Download</button>
 
   <script>
-    async function download() {
-      const url = document.getElementById('url').value;
-      window.location.href = "http://IP-KAMU:8000/download?url=" + encodeURIComponent(url);
+    function download() {
+      const url = document.getElementById("link").value;
+
+      // GANTI IP DI BAWAH DENGAN IP HP KAMU
+      const backend = "http://10.159.78.137:8000/download?url=";
+
+      window.location.href = backend + encodeURIComponent(url);
     }
   </script>
 </body>
